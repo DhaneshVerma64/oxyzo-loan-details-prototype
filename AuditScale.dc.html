@@ -198,6 +198,28 @@ button{font-family:inherit;box-sizing:border-box}
   text-decoration: none;
   color: inherit;
 }
+.adm-cheques-toggle {
+  border: none;
+  background: transparent;
+  padding: 0 4px;
+  text-align: left;
+  cursor: pointer;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 36px;
+  border-radius: 4px;
+  font-family: inherit;
+  transition: opacity 0.15s ease;
+}
+.adm-cheques-toggle:hover {
+  opacity: 0.85;
+}
+.adm-cheques-toggle:focus-visible {
+  outline: 2px solid var(--color-brand-strong, #00728A);
+  outline-offset: 2px;
+}
 </style>
 </helmet>
 <div style="width: 1440px; min-height: 4150px; box-sizing: border-box; padding: 20px 0 48px; display: flex; flex-direction: column; gap: 12px; background: var(--color-surface-canvas, #e2e8f0); font-family: var(--font-sans, 'Inter', system-ui, sans-serif); color: var(--color-text-primary, #0f172a); position: relative">
@@ -877,14 +899,49 @@ button{font-family:inherit;box-sizing:border-box}
       </sc-for>
     </div>
 
-    <!-- Cheques & Perfection (moved to right-side Sticky Action Bar) -->
+    <!-- Cheques & Perfection (Collapsible with Option B mini-bar & smart status) -->
     <div style="{{ sec.railBlockStyle }}">
       <div style="display: flex; flex-direction: column; gap: 8px; min-width: 0">
-        <div style="display: flex; justify-content: space-between; align-items: baseline"><h2 style="margin: 0; font-size: var(--text-md, 16px); line-height: var(--text-md-lh, 24px); font-weight: var(--weight-medium, 500); color: var(--color-text-secondary, #334155)">Cheques</h2><span style="font-size: var(--text-xs, 12px); line-height: var(--text-xs-lh, 18px); color: var(--color-text-tertiary, #64748b)">{{ sec.chTotal }}</span></div>
-        <div style="display: flex; height: 8px; border-radius: 4px; overflow: hidden; background: var(--color-surface-muted, #f1f5f9)"><sc-for list="{{ sec.chSegs }}" as="g" hint-placeholder-count="5"><div style="{{ g.style }}"></div></sc-for></div>
-        <sc-for list="{{ sec.cheques }}" as="q" hint-placeholder-count="5">
-          <div style="{{ q.row }}"><span style="display: flex; align-items: center; gap: 8px"><span style="{{ q.dot }}"></span>{{ q.label }}</span><span style="font-weight: var(--weight-medium, 500)">{{ q.count }}</span></div>
-        </sc-for>
+        <!-- Collapsible Header Button -->
+        <button onClick="{{ sec.toggleCheques }}" aria-expanded="{{ sec.chequesExpanded }}" aria-controls="sec-cheques-body" class="adm-cheques-toggle" title="Toggle cheques breakdown">
+          <div style="display: flex; align-items: baseline; gap: 8px">
+            <h2 style="margin: 0; font-size: var(--text-md, 16px); line-height: var(--text-md-lh, 24px); font-weight: var(--weight-medium, 500); color: var(--color-text-secondary, #334155)">Cheques</h2>
+            <span style="font-size: var(--text-xs, 12px); line-height: var(--text-xs-lh, 18px); color: var(--color-text-tertiary, #64748b)">{{ sec.chTotal }}</span>
+          </div>
+          <div style="display: flex; align-items: center; gap: 6px">
+            <span style="font-size: var(--text-xs, 12px); line-height: var(--text-xs-lh, 18px); color: var(--color-brand-strong, #00728A); font-weight: var(--weight-medium, 500)">{{ sec.toggleLabel }}</span>
+            <span style="font-size: 13px; color: var(--color-text-tertiary, #64748b); line-height: 1">{{ sec.chevron }}</span>
+          </div>
+        </button>
+
+        <!-- Always-visible segmented progress bar (Option B) -->
+        <div style="display: flex; height: 6px; border-radius: 3px; overflow: hidden; background: var(--color-surface-muted, #f1f5f9); margin-top: -2px" title="{{ sec.barTooltip }}">
+          <sc-for list="{{ sec.chSegs }}" as="g" hint-placeholder-count="5"><div style="{{ g.style }}"></div></sc-for>
+        </div>
+
+        <!-- When Collapsed: Option B useful subheading summary line -->
+        <sc-if value="{{ sec.isCollapsed }}" hint-placeholder-val="{{ false }}">
+          <div style="display: flex; align-items: center; gap: 6px; font-size: var(--text-xs, 12px); line-height: var(--text-xs-lh, 18px); color: var(--color-text-secondary, #334155); padding: 2px 4px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap">
+            <sc-if value="{{ sec.hasBounced }}" hint-placeholder-val="{{ true }}">
+              <span style="color: var(--color-danger, #be123c); font-weight: var(--weight-medium, 500); background: var(--color-danger-bg, #fff1f2); padding: 1px 6px; border-radius: 4px">{{ sec.bouncedText }}</span>
+              <span>·</span>
+            </sc-if>
+            <sc-if value="{{ sec.noBouncedClean }}" hint-placeholder-val="{{ false }}">
+              <span style="color: var(--color-success-text, #1d6b3a); font-weight: var(--weight-medium, 500)">✓ 0 bounced</span>
+              <span>·</span>
+            </sc-if>
+            <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap">{{ sec.collapsedSummary }}</span>
+          </div>
+        </sc-if>
+
+        <!-- When Expanded: full 5-row breakdown -->
+        <sc-if value="{{ sec.isOpen }}" hint-placeholder-val="{{ true }}">
+          <div id="sec-cheques-body" style="display: flex; flex-direction: column; gap: 2px">
+            <sc-for list="{{ sec.cheques }}" as="q" hint-placeholder-count="5">
+              <div style="{{ q.row }}"><span style="display: flex; align-items: center; gap: 8px"><span style="{{ q.dot }}"></span>{{ q.label }}</span><span style="font-weight: var(--weight-medium, 500)">{{ q.count }}</span></div>
+            </sc-for>
+          </div>
+        </sc-if>
       </div>
       <div style="display: flex; justify-content: space-between; align-items: center; gap: 8px; flex-wrap: wrap; border-top: 1px solid var(--color-surface-muted, #f1f5f9); padding-top: 10px; font-size: var(--text-xs, 12px); line-height: var(--text-xs-lh, 18px)">
         <span><span style="color: var(--color-text-tertiary, #64748b)">Perfection · </span><span style="font-weight: var(--weight-medium, 500); color: var(--color-text-primary, #0f172a)">{{ sec.perf }}</span></span>
@@ -1664,7 +1721,8 @@ class Component extends DCLogic {
       blockedField: null,
       liveCopyAnnouncement: '',
       emiStatus: initEmiStatus,
-      emiPageSize: initEmiPageSize
+      emiPageSize: initEmiPageSize,
+      chequesOpen: null
     };
 
     var self = this;
@@ -2090,14 +2148,47 @@ class Component extends DCLogic {
           return order.map(function(g){ return { name: g, rows: map[g].map(function(a){ var on = !!a[1], pri = false; if (on && first) { first = false; pri = true; } return { label: LABEL[a[0]] || a[0], why: on ? '' : a[2], aria: on ? 'false' : 'true', icon: ICON[a[0]] || ICON['[Future action]'], ic: pri ? '#ffffff' : '#00728A', btn: 'display: flex; flex-direction: column; align-items: center; gap: 6px; border: none; background: none; padding: 0; font-family: inherit; cursor: ' + (on ? 'pointer' : 'not-allowed') + '; opacity: ' + (on ? 1 : 0.45), tile: 'width: 52px; height: 52px; border-radius: 8px; display: flex; align-items: center; justify-content: center; background: ' + (pri ? 'var(--color-brand, #00AFCD)' : 'var(--color-surface-muted, #f1f5f9)') }; }) }; }); })();
     var sx = SECURITY[k], chTot = sx.ch.reduce(function(a, b){ return a + b; }, 0);
     var chipSt = function(kind){ return 'padding: 2px 10px; border-radius: 10px; font-size: var(--text-xs, 12px); line-height: var(--text-xs-lh, 18px); font-weight: var(--weight-medium, 500); ' + (kind === 'expired' || kind === 'short' ? 'background: var(--color-danger-bg, #fff1f2); color: var(--color-danger, #be123c)' : (kind === 'soon' ? 'background: var(--color-warning-bg, #fffbf0); color: var(--color-warning-text, #7a5200)' : 'background: var(--color-surface-muted, #f1f5f9); color: var(--color-success-text, #1d6b3a)')); };
+
+    var hardCopyN = sx.ch[0] || 0;
+    var activeN = sx.ch[1] || 0;
+    var bankN = sx.ch[2] || 0;
+    var bouncedN = sx.ch[3] || 0;
+    var paidN = sx.ch[4] || 0;
+
+    // Smart default: if not explicitly toggled by user, auto-expand if bounced > 0 (stressed loan), otherwise collapse (healthy / fresh loans)
+    var isChequesOpen = s.chequesOpen !== null && s.chequesOpen !== undefined
+      ? s.chequesOpen
+      : (bouncedN > 0);
+
+    var collapsedParts = [];
+    if (activeN > 0) collapsedParts.push(activeN + ' active');
+    if (paidN > 0) collapsedParts.push(paidN + ' paid');
+    if (bankN > 0) collapsedParts.push(bankN + ' in bank');
+    if (hardCopyN > 0 && activeN === 0) collapsedParts.push(hardCopyN + ' received');
+    var collapsedSummary = collapsedParts.join(' · ') || (chTot + ' mapped');
+    var barTooltip = 'Hard copy: ' + hardCopyN + ' · Active: ' + activeN + ' · Sent to bank: ' + bankN + ' · Bounced: ' + bouncedN + ' · Paid: ' + paidN;
+
     var sec = {
       railBlockStyle: (railW
         ? 'display: flex; flex-direction: column; gap: 10px; border-top: 1px solid var(--color-border, #e2e8f0); padding-top: 14px; border-radius: 6px'
         : 'display: flex; flex-direction: column; gap: 10px; flex: 1 1 260px; min-width: 240px; border-radius: 6px') + (s.highlightTile === 'security' ? '; outline: 2px solid var(--color-brand, #00AFCD); box-shadow: 0 0 0 4px var(--color-brand-subtle, #E5F7FA); padding: 10px' : ''),
       chTotal: chTot + ' mapped',
-      chSegs: sx.ch.map(function(n, ci){ return { style: 'height: 8px; width: ' + (chTot ? n / chTot * 100 : 0) + '%; background: ' + CH_COLORS[ci] }; }),
+      chSegs: sx.ch.map(function(n, ci){ return { style: 'height: 6px; width: ' + (chTot ? n / chTot * 100 : 0) + '%; background: ' + CH_COLORS[ci] }; }),
       cheques: sx.ch.map(function(n, ci){ var bad = ci === 3 && n > 0; return { label: (bad ? '▲ ' : '') + CH_LABELS[ci], count: n, dot: 'width: 8px; height: 8px; border-radius: 4px; flex-shrink: 0; background: ' + CH_COLORS[ci], row: 'display: flex; justify-content: space-between; align-items: center; padding: 4px 8px; border-radius: 4px; font-size: var(--text-sm, 14px); line-height: var(--text-sm-lh, 22px); color: ' + (bad ? 'var(--color-danger, #be123c)' : (n === 0 ? 'var(--color-text-disabled, #94a3b8)' : 'var(--color-text-primary, #0f172a)')) + (bad ? '; background: var(--color-danger-bg, #fff1f2)' : '') }; }),
-      perf: sx.perf
+      perf: sx.perf,
+      isOpen: isChequesOpen,
+      isCollapsed: !isChequesOpen,
+      chequesExpanded: isChequesOpen ? 'true' : 'false',
+      toggleLabel: isChequesOpen ? 'Hide' : 'View',
+      chevron: isChequesOpen ? '▴' : '▾',
+      barTooltip: barTooltip,
+      hasBounced: bouncedN > 0,
+      bouncedText: '▲ ' + bouncedN + ' bounced',
+      noBouncedClean: bouncedN === 0 && (activeN > 0 || paidN > 0),
+      collapsedSummary: collapsedSummary,
+      toggleCheques: function(){
+        self.setState({ chequesOpen: !isChequesOpen });
+      }
     };
     var ev = EVENTS[k], evShown = ev.items.filter(function(e){ return s.act === 'all' || e.type === s.act; }).slice(0, 5), newN = ev.items.filter(function(e){ return e.isNew; }).length;
     var upd = {
@@ -2400,6 +2491,7 @@ class Component extends DCLogic {
             self.recordLoan(nk, DATA[nk].loanNo, DATA[nk].name);
             self.setState({
               k: nk,
+              chequesOpen: null,
               tab: DATA[nk].dpdPeak > 0 ? 1 : 0,
               miView: 'loan',
               rangeMenuOpen: false,
@@ -2538,6 +2630,7 @@ class Component extends DCLogic {
       this.recordLoan(item.key, item.id, item.name);
       this.setState({
         k: item.key,
+        chequesOpen: null,
         recentPopoverOpen: false,
         tab: DATA[item.key].dpdPeak > 0 ? 1 : 0
       });
