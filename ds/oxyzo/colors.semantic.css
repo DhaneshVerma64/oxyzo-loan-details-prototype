@@ -1,0 +1,51 @@
+/* Oxyzo semantic colours. Boards use these names, never the primitives or raw hex.
+   Load colors.primitives.css first. To re-theme, change the mapping here. */
+:root {
+  /* Text */
+  --color-text-primary: var(--black-primary);
+  --color-text-secondary: var(--black-secondary);
+  --color-text-tertiary: var(--black-tint-1);
+  --color-text-disabled: var(--black-tint-2);
+  --color-text-inverse: var(--white);
+  --color-text-danger: var(--red-primary);
+
+  /* Surface */
+  --color-surface: var(--white);
+  --color-surface-subtle: var(--black-tint-6);
+  --color-surface-muted: var(--black-tint-5);
+  --color-surface-canvas: var(--black-tint-4);
+
+  /* Border */
+  --color-border: var(--black-tint-4);
+  --color-border-strong: var(--black-tint-3);
+
+  /* Danger */
+  --color-danger: var(--red-primary);
+  --color-danger-bg: var(--red-tint-5);
+  --color-danger-bg-strong: var(--red-tint-4);
+  --color-danger-border: var(--red-tint-3);
+
+  /* Brand / Admin Teal */
+  --color-brand: var(--teal-primary);
+  --color-brand-tint-1: var(--teal-tint-1);
+  --color-brand-tint-2: var(--teal-tint-2);
+  --color-brand-subtle: var(--teal-tint-3);
+  --color-brand-faint: var(--teal-tint-4);
+  /* Link and heading teal text uses #00728A (derived from primary, per handoff rules) */
+  --color-brand-strong: #00728A;
+  --color-brand-text: #00728A;
+
+  /* Status & Chart (Green, Amber, Blue, Nav) */
+  --color-success-text: #1d6b3a;
+  --color-success-bg: #eef9f2;
+  --color-success-border: #cfe6d6;
+  --color-warning-text: #7a5200;
+  --color-warning-border: #f0d58a;
+  --color-warning-bg: #fffbf0;
+  --color-chart-line: #2f6df6;
+  --color-chart-accent: #e08a1e;
+  --color-nav-bg: #2e3b4a;
+  --color-nav-active: #3a4a5c;
+  --color-nav-text: #c9d3dd;
+  --color-nav-text-muted: #8fa0b2;
+}

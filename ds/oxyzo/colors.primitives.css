@@ -1,0 +1,30 @@
+/* Oxyzo colour primitives. Names match the Figma colour styles one to one.
+   Admin primary teal + Red + Neutral from the handoff spec. */
+:root {
+  /* Color / Primary Teal (Admin) */
+  --teal-primary: #00AFCD;
+  --teal-tint-1: #4DC7DC;
+  --teal-tint-2: #99DFEB;
+  --teal-tint-3: #E5F7FA;
+  --teal-tint-4: #F2FBFC;
+
+  /* Color / Red */
+  --red-primary: #BE123C;
+  --red-tint-1: #E11D48;
+  --red-tint-2: #F43F5E;
+  --red-tint-3: #FB7185;
+  --red-tint-4: #FFE4E6;
+  --red-tint-5: #FFF1F2;
+
+  /* Color / Neutral */
+  --white: #FFFFFF;
+  --black: #000000;
+  --black-primary: #0F172A;
+  --black-secondary: #334155;
+  --black-tint-1: #64748B;
+  --black-tint-2: #94A3B8;
+  --black-tint-3: #CBD5E1;
+  --black-tint-4: #E2E8F0;
+  --black-tint-5: #F1F5F9;
+  --black-tint-6: #F8FAFC;
+}
