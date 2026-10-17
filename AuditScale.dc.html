@@ -220,9 +220,20 @@ button{font-family:inherit;box-sizing:border-box}
   outline: 2px solid var(--color-brand-strong, #00AFCD);
   outline-offset: 2px;
 }
+nav[aria-label="Primary"] {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(255, 255, 255, 0.2) transparent;
+}
+nav[aria-label="Primary"]::-webkit-scrollbar {
+  width: 5px;
+}
+nav[aria-label="Primary"]::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 4px;
+}
 </style>
 </helmet>
-<div style="width: 1440px; min-height: 100vh; box-sizing: border-box; padding: 20px 0 48px; display: flex; flex-direction: column; gap: 12px; background: var(--color-surface-canvas, #e2e8f0); font-family: var(--font-sans, 'Inter', system-ui, sans-serif); color: var(--color-text-primary, #0f172a); position: relative">
+<div style="{{ L.outerStyle }}">
 
   <!-- Collapsible Prototype Control Panel -->
   <div style="margin: 0 24px; background: var(--color-surface-subtle, #f8fafc); border: 1px solid var(--color-border-strong, #cbd5e1); border-radius: 8px; padding: 8px 16px; display: flex; flex-direction: column; gap: 10px">
@@ -2103,8 +2114,9 @@ class Component extends DCLogic {
       ctrlToggleLabel: s.ctrlOpen ? 'Hide controls ▴' : 'Show controls ▾',
       toggleCtrl: function(){ self.setState({ ctrlOpen: !s.ctrlOpen }); },
       readout: 'Screen ' + vw + ' · Sidebar ' + navW + ' · Main ' + mainW + ' · Bar chip cap: ' + chipCap + (open ? ' (sidebar open → 2 chips)' : ' (wide → 3 chips)') + ' · MI view: ' + miObj.activeViewLabel + ' (' + rangeLabel + ')',
-      frame: 'display: flex; align-items: stretch; flex: 1 1 auto; background: var(--color-surface-muted, #f1f5f9); width: ' + vw + 'px',
-      navStyle: 'flex-shrink: 0; background: var(--color-nav-bg, #2e3b4a); display: flex; flex-direction: column; padding-bottom: 16px; width: ' + navW + 'px',
+      frame: 'display: flex; align-items: stretch; flex: 1 1 auto; background: var(--color-surface-muted, #f1f5f9); width: ' + vw + 'px; min-height: calc(100vh - 60px);',
+      outerStyle: 'width: ' + vw + 'px; min-height: 100vh; box-sizing: border-box; padding: 12px 0 0; display: flex; flex-direction: column; gap: 8px; background: var(--color-surface-muted, #f1f5f9); font-family: var(--font-sans, \'Inter\', system-ui, sans-serif); color: var(--color-text-primary, #0f172a); position: relative',
+      navStyle: 'flex-shrink: 0; background: var(--color-nav-bg, #2e3b4a); display: flex; flex-direction: column; padding-bottom: 16px; width: ' + navW + 'px; position: sticky; top: 0; height: 100vh; overflow-y: auto; align-self: flex-start; z-index: 50; box-sizing: border-box;',
       navOpen: open,
       navItems: NAV.map(function(t, ni){ var on = t === 'Loans'; return open
         ? { text: t, caret: ni < 17 ? '▾' : '', row: 'display: flex; align-items: center; gap: 14px; height: 44px; padding: 0 14px; font-size: var(--text-sm, 14px); line-height: var(--text-sm-lh, 22px); color: ' + (on ? 'var(--color-text-inverse, #fff)' : 'var(--color-nav-text, #c9d3dd)') + (on ? '; background: var(--color-nav-active, #3a4a5c); font-weight: var(--weight-medium, 500)' : ''), icon: 'width: 18px; height: 18px; border-radius: 4px; flex-shrink: 0; background: ' + (on ? 'var(--color-text-inverse, #fff)' : 'var(--color-nav-text-muted, #8fa0b2)'), label: 'flex: 1 1 auto; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap' }
