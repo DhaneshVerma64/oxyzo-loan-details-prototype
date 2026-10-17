@@ -90,7 +90,7 @@ button{font-family:inherit;box-sizing:border-box}
 }
 .adm-copy-btn:hover {
   background: var(--color-surface-muted, #f1f5f9);
-  color: var(--color-brand-strong, #00728A);
+  color: var(--color-brand-strong, #00AFCD);
 }
 .adm-copy-btn.adm-copied {
   opacity: 1 !important;
@@ -156,8 +156,8 @@ button{font-family:inherit;box-sizing:border-box}
 }
 .adm-recent-popover-trigger:hover,
 .adm-recent-popover-trigger[aria-expanded="true"] {
-  border-color: var(--color-brand-strong, #00728A);
-  color: var(--color-brand-strong, #00728A);
+  border-color: var(--color-brand-strong, #00AFCD);
+  color: var(--color-brand-strong, #00AFCD);
 }
 .adm-recent-popover {
   position: absolute;
@@ -217,7 +217,7 @@ button{font-family:inherit;box-sizing:border-box}
   opacity: 0.85;
 }
 .adm-cheques-toggle:focus-visible {
-  outline: 2px solid var(--color-brand-strong, #00728A);
+  outline: 2px solid var(--color-brand-strong, #00AFCD);
   outline-offset: 2px;
 }
 </style>
@@ -229,9 +229,9 @@ button{font-family:inherit;box-sizing:border-box}
     <div style="display: flex; justify-content: space-between; align-items: center; gap: 12px; flex-wrap: wrap">
       <div style="display: flex; align-items: center; gap: 12px; flex-wrap: wrap">
         <span style="font-size: var(--text-xs, 12px); line-height: var(--text-xs-lh, 18px); font-weight: var(--weight-medium, 500); color: var(--color-text-secondary, #334155)">Prototype controls</span>
-        <span style="font-size: var(--text-xs, 12px); line-height: var(--text-xs-lh, 18px); font-weight: var(--weight-medium, 500); color: var(--color-brand-strong, #00728A)">{{ L.readout }}</span>
+        <span style="font-size: var(--text-xs, 12px); line-height: var(--text-xs-lh, 18px); font-weight: var(--weight-medium, 500); color: var(--color-brand-strong, #00AFCD)">{{ L.readout }}</span>
       </div>
-      <button onClick="{{ L.toggleCtrl }}" aria-expanded="{{ L.ctrlExpanded }}" style="height: 36px; padding: 0 12px; border-radius: 6px; border: 1px solid var(--color-border-strong, #cbd5e1); background: var(--color-surface, #fff); color: var(--color-brand-strong, #00728A); font-size: var(--text-xs, 12px); line-height: var(--text-xs-lh, 18px); font-weight: var(--weight-medium, 500); cursor: pointer">{{ L.ctrlToggleLabel }}</button>
+      <button onClick="{{ L.toggleCtrl }}" aria-expanded="{{ L.ctrlExpanded }}" style="height: 36px; padding: 0 12px; border-radius: 6px; border: 1px solid var(--color-border-strong, #cbd5e1); background: var(--color-surface, #fff); color: var(--color-brand-strong, #00AFCD); font-size: var(--text-xs, 12px); line-height: var(--text-xs-lh, 18px); font-weight: var(--weight-medium, 500); cursor: pointer">{{ L.ctrlToggleLabel }}</button>
     </div>
 
     <sc-if value="{{ L.ctrlOpen }}" hint-placeholder-val="{{ true }}">
@@ -290,8 +290,8 @@ button{font-family:inherit;box-sizing:border-box}
   <section style="{{ d.metaSectionStyle }}">
     <div style="display: flex; justify-content: space-between; align-items: center; gap: 16px; flex-wrap: wrap">
       <div style="display: flex; align-items: center; gap: 10px; min-width: 0; flex: 1 1 auto; flex-wrap: wrap">
-        <h1 style="margin: 0; font-size: var(--text-xl, 20px); line-height: var(--text-xl-lh, 30px); font-weight: var(--weight-medium, 500); color: var(--color-brand-strong, #00728A); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; min-width: 0">{{ d.name }}</h1>
-        <span style="flex-shrink: 0; height: 28px; display: inline-flex; align-items: center; font-size: var(--text-sm, 14px); line-height: var(--text-sm-lh, 22px); font-weight: var(--weight-medium, 500); padding: 0 10px; border-radius: 4px; background: var(--color-brand-subtle, #E5F7FA); color: var(--color-brand-strong, #00728A); white-space: nowrap">{{ d.status }}</span>
+        <h1 style="margin: 0; font-size: var(--text-xl, 20px); line-height: var(--text-xl-lh, 30px); font-weight: var(--weight-medium, 500); color: var(--color-brand-strong, #00AFCD); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; min-width: 0">{{ d.name }}</h1>
+        <span style="flex-shrink: 0; height: 28px; display: inline-flex; align-items: center; font-size: var(--text-sm, 14px); line-height: var(--text-sm-lh, 22px); font-weight: var(--weight-medium, 500); padding: 0 10px; border-radius: 4px; background: var(--color-brand-subtle, #E5F7FA); color: var(--color-brand-strong, #00AFCD); white-space: nowrap">{{ d.status }}</span>
         
         <!-- Star Toggle in Loan Details Header (Up to 20 pinned loans) -->
         <button onClick="{{ rec.togglePinCurrent }}" aria-pressed="{{ rec.currentPinned }}" class="adm-star-btn" title="{{ rec.currentPinTitle }}">
@@ -338,7 +338,7 @@ button{font-family:inherit;box-sizing:border-box}
               <sc-for list="{{ rec.pinnedList }}" as="pl" hint-placeholder-count="3">
                 <div class="adm-recent-item">
                   <a href="#" onClick="{{ pl.open }}" class="adm-item-link" title="{{ pl.fullName }}">
-                    <span style="font-size: var(--text-sm, 14px); line-height: var(--text-sm-lh, 22px); font-weight: var(--weight-medium, 500); color: var(--color-brand-strong, #00728A); overflow: hidden; text-overflow: ellipsis; white-space: nowrap">{{ pl.name }}</span>
+                    <span style="font-size: var(--text-sm, 14px); line-height: var(--text-sm-lh, 22px); font-weight: var(--weight-medium, 500); color: var(--color-brand-strong, #00AFCD); overflow: hidden; text-overflow: ellipsis; white-space: nowrap">{{ pl.name }}</span>
                     <span style="font-size: var(--text-xs, 12px); line-height: var(--text-xs-lh, 18px); color: var(--color-text-tertiary, #64748b); font-variant-numeric: tabular-nums">{{ pl.id }}</span>
                   </a>
                   <button onClick="{{ pl.togglePin }}" aria-label="Unpin loan" title="Unpin loan" style="border: none; background: transparent; cursor: pointer; color: var(--color-chart-accent, #e08a1e); padding: 6px; font-size: 14px">★</button>
@@ -353,7 +353,7 @@ button{font-family:inherit;box-sizing:border-box}
               <div style="padding: 4px 8px 6px; font-size: var(--text-xs, 12px); font-weight: var(--weight-medium, 500); color: var(--color-text-tertiary, #64748b); display: flex; justify-content: space-between; align-items: center">
                 <span>Recent loans ({{ rec.recentCount }}/10)</span>
                 <sc-if value="{{ rec.hasRecent }}" hint-placeholder-val="{{ true }}">
-                  <button onClick="{{ rec.clearRecent }}" style="border: none; background: transparent; font-size: var(--text-xs, 12px); color: var(--color-brand-strong, #00728A); cursor: pointer; padding: 0; font-weight: var(--weight-medium, 500)">Clear recent</button>
+                  <button onClick="{{ rec.clearRecent }}" style="border: none; background: transparent; font-size: var(--text-xs, 12px); color: var(--color-brand-strong, #00AFCD); cursor: pointer; padding: 0; font-weight: var(--weight-medium, 500)">Clear recent</button>
                 </sc-if>
               </div>
               <sc-if value="{{ rec.recentEmpty }}" hint-placeholder-val="{{ false }}">
@@ -362,7 +362,7 @@ button{font-family:inherit;box-sizing:border-box}
               <sc-for list="{{ rec.recentList }}" as="rl" hint-placeholder-count="3">
                 <div class="adm-recent-item">
                   <a href="#" onClick="{{ rl.open }}" class="adm-item-link" title="{{ rl.fullName }}">
-                    <span style="font-size: var(--text-sm, 14px); line-height: var(--text-sm-lh, 22px); font-weight: var(--weight-medium, 500); color: var(--color-brand-strong, #00728A); overflow: hidden; text-overflow: ellipsis; white-space: nowrap">{{ rl.name }}</span>
+                    <span style="font-size: var(--text-sm, 14px); line-height: var(--text-sm-lh, 22px); font-weight: var(--weight-medium, 500); color: var(--color-brand-strong, #00AFCD); overflow: hidden; text-overflow: ellipsis; white-space: nowrap">{{ rl.name }}</span>
                     <span style="display: flex; gap: 8px; font-size: var(--text-xs, 12px); line-height: var(--text-xs-lh, 18px); color: var(--color-text-tertiary, #64748b)"><span style="font-variant-numeric: tabular-nums">{{ rl.id }}</span><span>•</span><span>{{ rl.visited }}</span></span>
                   </a>
                   <button onClick="{{ rl.togglePin }}" aria-label="{{ rl.pinAria }}" title="{{ rl.pinAria }}" style="border: none; background: transparent; cursor: pointer; color: {{ rl.starColor }}; padding: 6px; font-size: 14px">{{ rl.starIcon }}</button>
@@ -376,7 +376,7 @@ button{font-family:inherit;box-sizing:border-box}
         <button style="height: 36px; padding: 0 16px; border: none; background: var(--color-brand, #00AFCD); color: var(--color-text-inverse, #fff); border-radius: 4px; font-size: var(--text-sm, 14px); line-height: var(--text-sm-lh, 22px); font-weight: var(--weight-medium, 500); cursor: pointer">{{ d.primary }}</button>
       </div>
     </div>
-    <div style="display: flex; flex-wrap: wrap; gap: 8px; font-size: var(--text-xs, 12px); line-height: var(--text-xs-lh, 18px); color: var(--color-text-secondary, #334155)"><span style="padding: 3px 10px; border-radius: 4px; background: var(--color-surface-muted, #f1f5f9)">{{ d.ltype }}</span><span style="padding: 3px 10px; border-radius: 4px; background: var(--color-surface-muted, #f1f5f9)">Program: {{ d.program }}</span><sc-if value="{{ ren.on }}" hint-placeholder-val="{{ false }}"><span style="padding: 3px 10px; border-radius: 4px; background: var(--color-brand-subtle, #E5F7FA); color: var(--color-brand-strong, #00728A); font-weight: var(--weight-medium, 500)">Renewal · loan 3 of 3 in chain</span></sc-if></div>
+    <div style="display: flex; flex-wrap: wrap; gap: 8px; font-size: var(--text-xs, 12px); line-height: var(--text-xs-lh, 18px); color: var(--color-text-secondary, #334155)"><span style="padding: 3px 10px; border-radius: 4px; background: var(--color-surface-muted, #f1f5f9)">{{ d.ltype }}</span><span style="padding: 3px 10px; border-radius: 4px; background: var(--color-surface-muted, #f1f5f9)">Program: {{ d.program }}</span><sc-if value="{{ ren.on }}" hint-placeholder-val="{{ false }}"><span style="padding: 3px 10px; border-radius: 4px; background: var(--color-brand-subtle, #E5F7FA); color: var(--color-brand-strong, #00AFCD); font-weight: var(--weight-medium, 500)">Renewal · loan 3 of 3 in chain</span></sc-if></div>
     
     <!-- Metadata Grid (with Click-to-copy on IDs: Loan No, Application) -->
     <div style="{{ L.meta }}">
@@ -402,7 +402,7 @@ button{font-family:inherit;box-sizing:border-box}
     <div style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid var(--color-surface-muted, #f1f5f9); padding-top: 8px">
       <sc-if value="{{ d.metaWarn }}" hint-placeholder-val="{{ false }}"><span style="font-size: var(--text-xs, 12px); line-height: var(--text-xs-lh, 18px); font-weight: var(--weight-medium, 500); padding: 3px 10px; border-radius: 10px; background: var(--color-danger-bg, #fff1f2); color: var(--color-danger, #be123c)">▲ {{ d.metaWarnText }}</span></sc-if>
       <sc-if value="{{ d.metaNoWarn }}" hint-placeholder-val="{{ true }}"><span style="font-size: var(--text-xs, 12px); line-height: var(--text-xs-lh, 18px); color: var(--color-text-tertiary, #64748b)">{{ d.metaHint }}</span></sc-if>
-      <button onClick="{{ d.toggleMeta }}" aria-expanded="{{ d.metaExpanded }}" style="height: 36px; padding: 0 10px; border: none; background: none; color: var(--color-brand-strong, #00728A); font-size: var(--text-sm, 14px); line-height: var(--text-sm-lh, 22px); font-weight: var(--weight-medium, 500); cursor: pointer">{{ d.metaLabel }}</button>
+      <button onClick="{{ d.toggleMeta }}" aria-expanded="{{ d.metaExpanded }}" style="height: 36px; padding: 0 10px; border: none; background: none; color: var(--color-brand-strong, #00AFCD); font-size: var(--text-sm, 14px); line-height: var(--text-sm-lh, 22px); font-weight: var(--weight-medium, 500); cursor: pointer">{{ d.metaLabel }}</button>
     </div>
     <sc-if value="{{ d.metaOpen }}" hint-placeholder-val="{{ false }}">
       <div style="{{ L.meta }}">
@@ -466,7 +466,7 @@ button{font-family:inherit;box-sizing:border-box}
         </sc-if>
       </div>
 
-      <button onClick="{{ attn.openAll }}" style="flex-shrink: 0; height: 36px; padding: 0 12px; border-radius: 4px; border: 1px solid var(--color-border-strong, #cbd5e1); background: var(--color-surface, #fff); color: var(--color-brand-strong, #00728A); font-size: var(--text-xs, 12px); line-height: var(--text-xs-lh, 18px); font-weight: var(--weight-medium, 500); cursor: pointer; white-space: nowrap">{{ attn.viewAllLabel }}</button>
+      <button onClick="{{ attn.openAll }}" style="flex-shrink: 0; height: 36px; padding: 0 12px; border-radius: 4px; border: 1px solid var(--color-border-strong, #cbd5e1); background: var(--color-surface, #fff); color: var(--color-brand-strong, #00AFCD); font-size: var(--text-xs, 12px); line-height: var(--text-xs-lh, 18px); font-weight: var(--weight-medium, 500); cursor: pointer; white-space: nowrap">{{ attn.viewAllLabel }}</button>
     </section>
   </sc-if>
 
@@ -478,7 +478,7 @@ button{font-family:inherit;box-sizing:border-box}
         <span style="font-size: var(--text-sm, 14px); line-height: var(--text-sm-lh, 22px); font-weight: var(--weight-medium, 500); color: var(--color-text-secondary, #334155); white-space: nowrap">✓ Alerts &amp; critical issues · all clear (0 critical issues · 0 alerts)</span>
         <span style="font-size: var(--text-xs, 12px); line-height: var(--text-xs-lh, 18px); color: var(--color-text-tertiary, #64748b); overflow: hidden; text-overflow: ellipsis; white-space: nowrap">{{ d.clearLine }}</span>
       </div>
-      <button onClick="{{ attn.openAll }}" style="flex-shrink: 0; height: 36px; padding: 0 10px; border: none; background: none; color: var(--color-brand-strong, #00728A); font-size: var(--text-xs, 12px); line-height: var(--text-xs-lh, 18px); font-weight: var(--weight-medium, 500); cursor: pointer; white-space: nowrap">View {{ attn.clearCount }} checks →</button>
+      <button onClick="{{ attn.openAll }}" style="flex-shrink: 0; height: 36px; padding: 0 10px; border: none; background: none; color: var(--color-brand-strong, #00AFCD); font-size: var(--text-xs, 12px); line-height: var(--text-xs-lh, 18px); font-weight: var(--weight-medium, 500); cursor: pointer; white-space: nowrap">View {{ attn.clearCount }} checks →</button>
     </section>
   </sc-if>
 
@@ -504,15 +504,15 @@ button{font-family:inherit;box-sizing:border-box}
         <span style="font-size: var(--text-sm, 14px); line-height: var(--text-sm-lh, 22px); font-weight: var(--weight-medium, 500); color: var(--color-text-primary, #0f172a)">▲ Couldn't load alerts or critical issues</span>
         <span style="font-size: var(--text-xs, 12px); line-height: var(--text-xs-lh, 18px); color: var(--color-text-tertiary, #64748b)">Both signal sources timed out. KPI tiles below remain live.</span>
       </div>
-      <button onClick="{{ attn.retryAll }}" style="flex-shrink: 0; height: 36px; padding: 0 14px; border-radius: 4px; border: 1px solid var(--color-border-strong, #cbd5e1); background: var(--color-surface, #fff); color: var(--color-brand-strong, #00728A); font-size: var(--text-xs, 12px); line-height: var(--text-xs-lh, 18px); font-weight: var(--weight-medium, 500); cursor: pointer">Retry both</button>
+      <button onClick="{{ attn.retryAll }}" style="flex-shrink: 0; height: 36px; padding: 0 14px; border-radius: 4px; border: 1px solid var(--color-border-strong, #cbd5e1); background: var(--color-surface, #fff); color: var(--color-brand-strong, #00AFCD); font-size: var(--text-xs, 12px); line-height: var(--text-xs-lh, 18px); font-weight: var(--weight-medium, 500); cursor: pointer">Retry both</button>
     </section>
   </sc-if>
 
   <!-- Active Tile Link Highlight Banner -->
   <sc-if value="{{ attn.hasHighlight }}" hint-placeholder-val="{{ false }}">
-    <div style="display: flex; align-items: center; justify-content: space-between; padding: 8px 14px; border-radius: 6px; background: var(--color-brand-subtle, #E5F7FA); border: 1px solid var(--color-brand, #00AFCD); font-size: var(--text-xs, 12px); line-height: var(--text-xs-lh, 18px); color: var(--color-brand-strong, #00728A)">
+    <div style="display: flex; align-items: center; justify-content: space-between; padding: 8px 14px; border-radius: 6px; background: var(--color-brand-subtle, #E5F7FA); border: 1px solid var(--color-brand, #00AFCD); font-size: var(--text-xs, 12px); line-height: var(--text-xs-lh, 18px); color: var(--color-brand-strong, #00AFCD)">
       <span>Linked from Alerts &amp; critical issues overlay: highlighting <span style="font-weight: var(--weight-semibold, 600)">{{ attn.highlightName }}</span> (tile owns the figure; chip states the cause only).</span>
-      <button onClick="{{ attn.clearHighlight }}" style="height: 36px; padding: 0 10px; border: none; background: none; color: var(--color-brand-strong, #00728A); font-size: var(--text-xs, 12px); font-weight: var(--weight-medium, 500); cursor: pointer">Dismiss ✕</button>
+      <button onClick="{{ attn.clearHighlight }}" style="height: 36px; padding: 0 10px; border: none; background: none; color: var(--color-brand-strong, #00AFCD); font-size: var(--text-xs, 12px); font-weight: var(--weight-medium, 500); cursor: pointer">Dismiss ✕</button>
     </div>
   </sc-if>
 
@@ -526,7 +526,7 @@ button{font-family:inherit;box-sizing:border-box}
         <div style="display: flex; height: 6px; border-radius: 3px; overflow: hidden; background: var(--color-surface-muted, #f1f5f9); margin-top: 8px"><sc-for list="{{ d.segs }}" as="sg" hint-placeholder-count="3"><div style="{{ sg.style }}"></div></sc-for></div>
         <div style="font-size: var(--text-xs, 12px); line-height: var(--text-xs-lh, 18px); color: var(--color-text-tertiary, #64748b); margin-top: 6px">{{ d.limitLine }}</div>
       </div>
-      <div style="display: inline-flex; align-items: center; min-height: 36px; margin-top: auto; padding-top: 8px; font-size: var(--text-xs, 12px); line-height: var(--text-xs-lh, 18px); color: var(--color-brand-strong, #00728A); font-weight: var(--weight-medium, 500); text-decoration: underline">View chart (Loan view) →</div>
+      <div style="display: inline-flex; align-items: center; min-height: 36px; margin-top: auto; padding-top: 8px; font-size: var(--text-xs, 12px); line-height: var(--text-xs-lh, 18px); color: var(--color-brand-strong, #00AFCD); font-weight: var(--weight-medium, 500); text-decoration: underline">View chart (Loan view) →</div>
     </button>
     <div style="{{ d.outTileStyle }}">
       <div style="display: flex; flex-direction: column; width: 100%">
@@ -534,7 +534,7 @@ button{font-family:inherit;box-sizing:border-box}
         <div style="font-size: var(--text-xl, 20px); line-height: var(--text-xl-lh, 30px); font-weight: var(--weight-semibold, 600); color: var(--color-text-primary, #0f172a); overflow-wrap: anywhere">{{ d.outstanding }}</div>
         <div style="display: flex; flex-direction: column; gap: 2px; margin-top: 8px"><sc-for list="{{ d.ledger }}" as="lg" hint-placeholder-count="4"><div style="display: flex; justify-content: space-between; gap: 8px; font-size: var(--text-xs, 12px); line-height: var(--text-xs-lh, 18px)"><span style="color: var(--color-text-tertiary, #64748b)">{{ lg.k }}</span><span style="font-weight: var(--weight-medium, 500); text-align: right; overflow-wrap: anywhere">{{ lg.v }}</span></div></sc-for></div>
       </div>
-      <a href="#" style="display: inline-flex; align-items: center; min-height: 36px; margin-top: auto; padding-top: 8px; font-size: var(--text-xs, 12px); line-height: var(--text-xs-lh, 18px); font-weight: var(--weight-medium, 500); color: var(--color-brand-strong, #00728A); text-decoration: underline">View ledger →</a>
+      <a href="#" style="display: inline-flex; align-items: center; min-height: 36px; margin-top: auto; padding-top: 8px; font-size: var(--text-xs, 12px); line-height: var(--text-xs-lh, 18px); font-weight: var(--weight-medium, 500); color: var(--color-brand-strong, #00AFCD); text-decoration: underline">View ledger →</a>
     </div>
     <button onClick="{{ d.openDpd }}" style="{{ d.dpdTileStyle }}">
       <div style="display: flex; flex-direction: column; width: 100%">
@@ -543,7 +543,7 @@ button{font-family:inherit;box-sizing:border-box}
         <sc-if value="{{ d.hasNext }}" hint-placeholder-val="{{ false }}"><div style="font-size: var(--text-xs, 12px); line-height: var(--text-xs-lh, 18px); color: var(--color-text-tertiary, #64748b)">{{ d.nextDue }}</div></sc-if>
         <div style="display: flex; flex-direction: column; gap: 2px; margin-top: 8px"><sc-for list="{{ d.dueRows }}" as="dr" hint-placeholder-count="4"><div title="{{ dr.tip }}" style="display: flex; justify-content: space-between; gap: 8px; font-size: var(--text-xs, 12px); line-height: var(--text-xs-lh, 18px)"><span style="color: var(--color-text-tertiary, #64748b)">{{ dr.k }}</span><span style="{{ dr.vs }}">{{ dr.v }}</span></div></sc-for></div>
       </div>
-      <div style="display: inline-flex; align-items: center; min-height: 36px; margin-top: auto; padding-top: 8px; font-size: var(--text-xs, 12px); line-height: var(--text-xs-lh, 18px); color: var(--color-brand-strong, #00728A); font-weight: var(--weight-medium, 500); text-decoration: underline">View DPD chart (Loan view) →</div>
+      <div style="display: inline-flex; align-items: center; min-height: 36px; margin-top: auto; padding-top: 8px; font-size: var(--text-xs, 12px); line-height: var(--text-xs-lh, 18px); color: var(--color-brand-strong, #00AFCD); font-weight: var(--weight-medium, 500); text-decoration: underline">View DPD chart (Loan view) →</div>
     </button>
     <div style="{{ d.bounceTileStyle }}">
       <div style="display: flex; flex-direction: column; width: 100%">
@@ -552,7 +552,7 @@ button{font-family:inherit;box-sizing:border-box}
         <div style="font-size: var(--text-xs, 12px); line-height: var(--text-xs-lh, 18px); color: var(--color-text-tertiary, #64748b)">{{ d.bLife }}</div>
         <div style="display: flex; flex-direction: column; gap: 2px; margin-top: 8px"><sc-for list="{{ d.bRows }}" as="br" hint-placeholder-count="4"><div title="{{ br.tip }}" style="display: flex; justify-content: space-between; gap: 8px; font-size: var(--text-xs, 12px); line-height: var(--text-xs-lh, 18px)"><span style="color: var(--color-text-tertiary, #64748b)">{{ br.k }}</span><span style="{{ br.vs }}">{{ br.v }}</span></div></sc-for></div>
       </div>
-      <a href="#" style="display: inline-flex; align-items: center; min-height: 36px; margin-top: auto; padding-top: 8px; font-size: var(--text-xs, 12px); line-height: var(--text-xs-lh, 18px); font-weight: var(--weight-medium, 500); color: var(--color-brand-strong, #00728A); text-decoration: underline">View all →</a>
+      <a href="#" style="display: inline-flex; align-items: center; min-height: 36px; margin-top: auto; padding-top: 8px; font-size: var(--text-xs, 12px); line-height: var(--text-xs-lh, 18px); font-weight: var(--weight-medium, 500); color: var(--color-brand-strong, #00AFCD); text-decoration: underline">View all →</a>
     </div>
   </div>
 
@@ -577,7 +577,7 @@ button{font-family:inherit;box-sizing:border-box}
             <span style="display: flex; flex-wrap: wrap; align-items: center; gap: 4px 6px; font-size: var(--text-xs, 12px); line-height: var(--text-xs-lh, 18px); color: var(--color-text-tertiary, #64748b)">
               <span style="white-space: nowrap">{{ r.type }}</span>
               <sc-if value="{{ r.cur }}" hint-placeholder-val="{{ false }}">
-                <span style="padding: 0 7px; border-radius: 10px; background: var(--color-surface, #fff); border: 1px solid var(--color-brand-muted, #99DFEB); color: var(--color-brand-strong, #00728A); font-weight: var(--weight-medium, 500); white-space: nowrap">Latest loan</span>
+                <span style="padding: 0 7px; border-radius: 10px; background: var(--color-surface, #fff); border: 1px solid var(--color-brand-muted, #99DFEB); color: var(--color-brand-strong, #00AFCD); font-weight: var(--weight-medium, 500); white-space: nowrap">Latest loan</span>
                 <span style="font-weight: var(--weight-medium, 500); color: var(--color-warning-text, #7a5200); white-space: nowrap">· You're here</span>
               </sc-if>
             </span>
@@ -618,7 +618,7 @@ button{font-family:inherit;box-sizing:border-box}
               <sc-for list="{{ mi.rangeOpts }}" as="ro" hint-placeholder-count="5">
                 <button role="option" aria-selected="{{ ro.selected }}" onClick="{{ ro.pick }}" style="{{ ro.style }}">
                   <span>{{ ro.label }}</span>
-                  <span style="color: var(--color-brand-strong, #00728A); font-weight: var(--weight-medium, 500)">{{ ro.check }}</span>
+                  <span style="color: var(--color-brand-strong, #00AFCD); font-weight: var(--weight-medium, 500)">{{ ro.check }}</span>
                 </button>
               </sc-for>
             </div>
@@ -637,7 +637,7 @@ button{font-family:inherit;box-sizing:border-box}
           <span style="font-size: var(--text-sm, 14px); line-height: var(--text-sm-lh, 22px); font-weight: var(--weight-medium, 500); color: var(--color-text-secondary, #334155)">No utilisation, DPD or repayment history yet</span>
           <span style="font-size: var(--text-xs, 12px); line-height: var(--text-xs-lh, 18px); color: var(--color-text-tertiary, #64748b)">Guardrail active: loan is Ready for disbursal with ₹0 disbursed. 0 Module intelligence API calls fired and 0 AI tokens spent.</span>
         </div>
-        <button onClick="{{ mi.toggleEmptyPreview }}" style="height: 36px; padding: 0 14px; border-radius: 4px; border: 1px solid var(--color-border-strong, #cbd5e1); background: var(--color-surface, #fff); color: var(--color-brand-strong, #00728A); font-size: var(--text-xs, 12px); line-height: var(--text-xs-lh, 18px); font-weight: var(--weight-medium, 500); cursor: pointer">Preview scheduled amortisation chart →</button>
+        <button onClick="{{ mi.toggleEmptyPreview }}" style="height: 36px; padding: 0 14px; border-radius: 4px; border: 1px solid var(--color-border-strong, #cbd5e1); background: var(--color-surface, #fff); color: var(--color-brand-strong, #00AFCD); font-size: var(--text-xs, 12px); line-height: var(--text-xs-lh, 18px); font-weight: var(--weight-medium, 500); cursor: pointer">Preview scheduled amortisation chart →</button>
       </div>
     </sc-if>
 
@@ -756,9 +756,9 @@ button{font-family:inherit;box-sizing:border-box}
           <div style="display: flex; flex-direction: column; gap: 12px; min-width: 0">
             <div style="border: 1px solid var(--color-border, #e2e8f0); border-radius: 6px; padding: 14px; display: flex; flex-direction: column; gap: 10px; font-size: var(--text-sm, 14px); line-height: var(--text-sm-lh, 22px)">
               <span style="font-weight: var(--weight-medium, 500); color: var(--color-text-secondary, #334155)">{{ d.askTitle }} ({{ mi.activeViewLabel }})</span>
-              <div style="align-self: flex-end; max-width: 85%; background: var(--color-brand-subtle, #E5F7FA); color: var(--color-brand-strong, #00728A); padding: 8px 10px; border-radius: 10px 10px 2px 10px">{{ d.q }}</div>
+              <div style="align-self: flex-end; max-width: 85%; background: var(--color-brand-subtle, #E5F7FA); color: var(--color-brand-strong, #00AFCD); padding: 8px 10px; border-radius: 10px 10px 2px 10px">{{ d.q }}</div>
               <div style="align-self: flex-start; max-width: 90%; background: var(--color-surface-subtle, #f8fafc); padding: 8px 10px; border-radius: 10px 10px 10px 2px">{{ d.a }}</div>
-              <div style="display: flex; flex-wrap: wrap; gap: 6px"><sc-for list="{{ d.chips }}" as="c" hint-placeholder-count="3"><span style="padding: 4px 10px; border-radius: 12px; background: var(--color-brand-subtle, #E5F7FA); color: var(--color-brand-strong, #00728A); font-size: var(--text-xs, 12px); line-height: var(--text-xs-lh, 18px)">{{ c }}</span></sc-for></div>
+              <div style="display: flex; flex-wrap: wrap; gap: 6px"><sc-for list="{{ d.chips }}" as="c" hint-placeholder-count="3"><span style="padding: 4px 10px; border-radius: 12px; background: var(--color-brand-subtle, #E5F7FA); color: var(--color-brand-strong, #00AFCD); font-size: var(--text-xs, 12px); line-height: var(--text-xs-lh, 18px)">{{ c }}</span></sc-for></div>
               <div style="height: 36px; border: 1px solid var(--color-border-strong, #cbd5e1); border-radius: 4px; display: flex; align-items: center; justify-content: space-between; padding: 0 4px 0 10px; color: var(--color-text-disabled, #94a3b8)">Ask the agent…<span style="height: 28px; display: inline-flex; align-items: center; background: var(--color-brand, #00AFCD); color: var(--color-text-inverse, #fff); padding: 0 12px; border-radius: 4px; font-size: var(--text-xs, 12px); line-height: var(--text-xs-lh, 18px); font-weight: var(--weight-medium, 500)">Send</span></div>
             </div>
           </div>
@@ -830,7 +830,7 @@ button{font-family:inherit;box-sizing:border-box}
         <h2 style="margin: 0; font-size: var(--text-md, 16px); line-height: var(--text-md-lh, 24px); font-weight: var(--weight-medium, 500); color: var(--color-text-secondary, #334155)">EMI schedule ({{ emi.totalCount }})</h2>
         <sc-if value="{{ emi.isFiltered }}" hint-placeholder-val="{{ false }}">
           <span style="font-size: var(--text-xs, 12px); line-height: var(--text-xs-lh, 18px); color: var(--color-text-secondary, #334155)">{{ emi.filteredCountText }} · </span>
-          <button onClick="{{ emi.resetFilters }}" style="border: none; background: none; color: var(--color-brand-strong, #00728A); font-size: var(--text-xs, 12px); line-height: var(--text-xs-lh, 18px); font-weight: var(--weight-medium, 500); text-decoration: underline; cursor: pointer; padding: 0">Reset filters</button>
+          <button onClick="{{ emi.resetFilters }}" style="border: none; background: none; color: var(--color-brand-strong, #00AFCD); font-size: var(--text-xs, 12px); line-height: var(--text-xs-lh, 18px); font-weight: var(--weight-medium, 500); text-decoration: underline; cursor: pointer; padding: 0">Reset filters</button>
         </sc-if>
       </div>
       <div style="display: flex; align-items: center; gap: 8px">
@@ -866,7 +866,7 @@ button{font-family:inherit;box-sizing:border-box}
           </div>
           <sc-for list="{{ emi.rows }}" as="er" hint-placeholder-count="5">
             <div style="{{ er.rowStyle }}">
-              <span style="font-weight: var(--weight-medium, 500); color: var(--color-brand-strong, #00728A)">{{ er.no }}</span>
+              <span style="font-weight: var(--weight-medium, 500); color: var(--color-brand-strong, #00AFCD)">{{ er.no }}</span>
               <span>{{ er.startDate }}</span>
               <span>{{ er.emiDate }}</span>
               <span><span style="{{ er.dueTypeStyle }}">{{ er.dueType }}</span></span>
@@ -883,7 +883,7 @@ button{font-family:inherit;box-sizing:border-box}
     </sc-if>
     <sc-if value="{{ emi.emptyRows }}" hint-placeholder-val="{{ false }}">
       <div style="padding: 24px 16px; border: 1px dashed var(--color-border-strong, #cbd5e1); border-radius: 6px; text-align: center; color: var(--color-text-tertiary, #64748b); font-size: var(--text-sm, 14px)">
-        No overdue dues on this loan. <button onClick="{{ emi.resetFilters }}" style="border: none; background: none; color: var(--color-brand-strong, #00728A); font-size: var(--text-sm, 14px); font-weight: var(--weight-medium, 500); text-decoration: underline; cursor: pointer; padding: 0">Show all</button>
+        No overdue dues on this loan. <button onClick="{{ emi.resetFilters }}" style="border: none; background: none; color: var(--color-brand-strong, #00AFCD); font-size: var(--text-sm, 14px); font-weight: var(--weight-medium, 500); text-decoration: underline; cursor: pointer; padding: 0">Show all</button>
       </div>
     </sc-if>
   </section>
@@ -909,7 +909,7 @@ button{font-family:inherit;box-sizing:border-box}
             <span style="font-size: var(--text-xs, 12px); line-height: var(--text-xs-lh, 18px); color: var(--color-text-tertiary, #64748b)">{{ sec.chTotal }}</span>
           </div>
           <div style="display: flex; align-items: center; gap: 6px">
-            <span style="font-size: var(--text-xs, 12px); line-height: var(--text-xs-lh, 18px); color: var(--color-brand-strong, #00728A); font-weight: var(--weight-medium, 500)">{{ sec.toggleLabel }}</span>
+            <span style="font-size: var(--text-xs, 12px); line-height: var(--text-xs-lh, 18px); color: var(--color-brand-strong, #00AFCD); font-weight: var(--weight-medium, 500)">{{ sec.toggleLabel }}</span>
             <span style="font-size: 13px; color: var(--color-text-tertiary, #64748b); line-height: 1">{{ sec.chevron }}</span>
           </div>
         </button>
@@ -945,21 +945,21 @@ button{font-family:inherit;box-sizing:border-box}
       </div>
       <div style="display: flex; justify-content: space-between; align-items: center; gap: 8px; flex-wrap: wrap; border-top: 1px solid var(--color-surface-muted, #f1f5f9); padding-top: 10px; font-size: var(--text-xs, 12px); line-height: var(--text-xs-lh, 18px)">
         <span><span style="color: var(--color-text-tertiary, #64748b)">Perfection · </span><span style="font-weight: var(--weight-medium, 500); color: var(--color-text-primary, #0f172a)">{{ sec.perf }}</span></span>
-        <a href="#" style="display: inline-flex; align-items: center; min-height: 36px; font-weight: var(--weight-medium, 500); color: var(--color-brand-strong, #00728A)">View checklist →</a>
+        <a href="#" style="display: inline-flex; align-items: center; min-height: 36px; font-weight: var(--weight-medium, 500); color: var(--color-brand-strong, #00AFCD)">View checklist →</a>
       </div>
     </div>
 
     <!-- Recent Updates (with remembered filter, safety reset indicator, and UTR click-to-copy) -->
     <div style="{{ L.feed }}">
       <div style="display: flex; justify-content: space-between; align-items: center">
-        <span style="display: flex; align-items: center; gap: 8px"><h2 style="margin: 0; font-size: var(--text-md, 16px); line-height: var(--text-md-lh, 24px); font-weight: var(--weight-medium, 500); color: var(--color-text-secondary, #334155)">Recent updates</h2><sc-if value="{{ upd.hasNew }}" hint-placeholder-val="{{ false }}"><span style="padding: 0 8px; border-radius: 10px; background: var(--color-brand-subtle, #E5F7FA); color: var(--color-brand-strong, #00728A); font-size: var(--text-xs, 12px); line-height: var(--text-xs-lh, 18px); font-weight: var(--weight-medium, 500)">{{ upd.newText }}</span></sc-if></span>
+        <span style="display: flex; align-items: center; gap: 8px"><h2 style="margin: 0; font-size: var(--text-md, 16px); line-height: var(--text-md-lh, 24px); font-weight: var(--weight-medium, 500); color: var(--color-text-secondary, #334155)">Recent updates</h2><sc-if value="{{ upd.hasNew }}" hint-placeholder-val="{{ false }}"><span style="padding: 0 8px; border-radius: 10px; background: var(--color-brand-subtle, #E5F7FA); color: var(--color-brand-strong, #00AFCD); font-size: var(--text-xs, 12px); line-height: var(--text-xs-lh, 18px); font-weight: var(--weight-medium, 500)">{{ upd.newText }}</span></sc-if></span>
         <span style="font-size: var(--text-xs, 12px); line-height: var(--text-xs-lh, 18px); color: var(--color-text-tertiary, #64748b)">{{ upd.total }} total</span>
       </div>
       <div style="display: flex; flex-wrap: wrap; gap: 4px"><sc-for list="{{ upd.filters }}" as="f" hint-placeholder-count="5"><button onClick="{{ f.pick }}" aria-pressed="{{ f.pressed }}" style="{{ f.style }}">{{ f.label }}</button></sc-for></div>
       <sc-if value="{{ upd.isFiltered }}" hint-placeholder-val="{{ false }}">
         <div style="display: flex; justify-content: space-between; align-items: center; font-size: var(--text-xs, 12px); line-height: var(--text-xs-lh, 18px); color: var(--color-text-secondary, #334155)">
           <span style="font-weight: var(--weight-medium, 500)">{{ upd.filteredCountText }}</span>
-          <button onClick="{{ upd.resetFilter }}" style="border: none; background: none; color: var(--color-brand-strong, #00728A); font-size: var(--text-xs, 12px); line-height: var(--text-xs-lh, 18px); font-weight: var(--weight-medium, 500); cursor: pointer; text-decoration: underline; padding: 0">Reset filters</button>
+          <button onClick="{{ upd.resetFilter }}" style="border: none; background: none; color: var(--color-brand-strong, #00AFCD); font-size: var(--text-xs, 12px); line-height: var(--text-xs-lh, 18px); font-weight: var(--weight-medium, 500); cursor: pointer; text-decoration: underline; padding: 0">Reset filters</button>
         </div>
       </sc-if>
       <sc-for list="{{ upd.items }}" as="u" hint-placeholder-count="5">
@@ -993,8 +993,8 @@ button{font-family:inherit;box-sizing:border-box}
           </sc-if>
         </div>
       </sc-for>
-      <sc-if value="{{ upd.empty }}" hint-placeholder-val="{{ false }}"><div style="font-size: var(--text-sm, 14px); line-height: var(--text-sm-lh, 22px); color: var(--color-text-tertiary, #64748b); padding: 8px 0">No updates in this category. <button onClick="{{ upd.resetFilter }}" style="border: none; background: none; color: var(--color-brand-strong, #00728A); font-size: var(--text-sm, 14px); line-height: var(--text-sm-lh, 22px); font-weight: var(--weight-medium, 500); cursor: pointer; text-decoration: underline; padding: 0">Show all</button></div></sc-if>
-      <a href="#" style="display: inline-flex; align-items: center; min-height: 36px; font-size: var(--text-sm, 14px); line-height: var(--text-sm-lh, 22px); font-weight: var(--weight-medium, 500); color: var(--color-brand-strong, #00728A)">View all updates →</a>
+      <sc-if value="{{ upd.empty }}" hint-placeholder-val="{{ false }}"><div style="font-size: var(--text-sm, 14px); line-height: var(--text-sm-lh, 22px); color: var(--color-text-tertiary, #64748b); padding: 8px 0">No updates in this category. <button onClick="{{ upd.resetFilter }}" style="border: none; background: none; color: var(--color-brand-strong, #00AFCD); font-size: var(--text-sm, 14px); line-height: var(--text-sm-lh, 22px); font-weight: var(--weight-medium, 500); cursor: pointer; text-decoration: underline; padding: 0">Show all</button></div></sc-if>
+      <a href="#" style="display: inline-flex; align-items: center; min-height: 36px; font-size: var(--text-sm, 14px); line-height: var(--text-sm-lh, 22px); font-weight: var(--weight-medium, 500); color: var(--color-brand-strong, #00AFCD)">View all updates →</a>
     </div>
   </aside>
   </div>
@@ -1075,7 +1075,7 @@ button{font-family:inherit;box-sizing:border-box}
                       </sc-if>
                     </div>
                     <sc-if value="{{ si.hasTileLink }}" hint-placeholder-val="{{ true }}">
-                      <button onClick="{{ si.jumpToTile }}" style="height: 36px; border: none; background: none; padding: 0 6px; color: var(--color-brand-strong, #00728A); font-size: var(--text-xs, 12px); line-height: var(--text-xs-lh, 18px); font-weight: var(--weight-medium, 500); cursor: pointer">{{ si.tileLinkLabel }} →</button>
+                      <button onClick="{{ si.jumpToTile }}" style="height: 36px; border: none; background: none; padding: 0 6px; color: var(--color-brand-strong, #00AFCD); font-size: var(--text-xs, 12px); line-height: var(--text-xs-lh, 18px); font-weight: var(--weight-medium, 500); cursor: pointer">{{ si.tileLinkLabel }} →</button>
                     </sc-if>
                   </div>
                 </div>
@@ -1090,9 +1090,9 @@ button{font-family:inherit;box-sizing:border-box}
           </sc-if>
 
           <sc-if value="{{ attn.actionFeedback }}" hint-placeholder-val="{{ false }}">
-            <div style="padding: 10px 12px; border-radius: 6px; background: var(--color-brand-subtle, #E5F7FA); border: 1px solid var(--color-brand, #00AFCD); font-size: var(--text-xs, 12px); line-height: var(--text-xs-lh, 18px); color: var(--color-brand-strong, #00728A); display: flex; justify-content: space-between; align-items: center">
+            <div style="padding: 10px 12px; border-radius: 6px; background: var(--color-brand-subtle, #E5F7FA); border: 1px solid var(--color-brand, #00AFCD); font-size: var(--text-xs, 12px); line-height: var(--text-xs-lh, 18px); color: var(--color-brand-strong, #00AFCD); display: flex; justify-content: space-between; align-items: center">
               <span>{{ attn.actionFeedbackText }}</span>
-              <button onClick="{{ attn.clearFeedback }}" style="height: 36px; padding: 0 8px; border: none; background: none; color: var(--color-brand-strong, #00728A); font-size: var(--text-xs, 12px); cursor: pointer">✕</button>
+              <button onClick="{{ attn.clearFeedback }}" style="height: 36px; padding: 0 8px; border: none; background: none; color: var(--color-brand-strong, #00AFCD); font-size: var(--text-xs, 12px); cursor: pointer">✕</button>
             </div>
           </sc-if>
 
@@ -1755,7 +1755,7 @@ class Component extends DCLogic {
 
     /* 36px minimum height button style helper */
     var pillBtn = function(on){
-      return 'height: 36px; padding: 0 12px; border-radius: 18px; font-size: var(--text-xs, 12px); line-height: var(--text-xs-lh, 18px); font-weight: var(--weight-medium, 500); cursor: pointer; border: 1px solid ' + (on ? 'var(--color-brand-strong, #00728A)' : 'var(--color-border-strong, #cbd5e1)') + '; background: ' + (on ? 'var(--color-brand-strong, #00728A)' : 'var(--color-surface, #fff)') + '; color: ' + (on ? 'var(--color-text-inverse, #fff)' : 'var(--color-text-secondary, #334155)');
+      return 'height: 36px; padding: 0 12px; border-radius: 18px; font-size: var(--text-xs, 12px); line-height: var(--text-xs-lh, 18px); font-weight: var(--weight-medium, 500); cursor: pointer; border: 1px solid ' + (on ? 'var(--color-brand-strong, #00AFCD)' : 'var(--color-border-strong, #cbd5e1)') + '; background: ' + (on ? 'var(--color-brand-strong, #00AFCD)' : 'var(--color-surface, #fff)') + '; color: ' + (on ? 'var(--color-text-inverse, #fff)' : 'var(--color-text-secondary, #334155)');
     };
 
     /* 2) KYC Header Badge & Overlay */
@@ -1767,7 +1767,7 @@ class Component extends DCLogic {
       badgeStyle: 'height: 36px; padding: 0 12px; border-radius: 6px; display: inline-flex; align-items: center; gap: 8px; font-size: var(--text-xs, 12px); line-height: var(--text-xs-lh, 18px); font-weight: var(--weight-medium, 500); cursor: pointer; border: 1px solid ' + (isKycHigh ? 'var(--color-danger-border, #fb7185)' : 'var(--color-success-border, #cfe6d6)') + '; background: ' + (isKycHigh ? 'var(--color-danger-bg, #fff1f2)' : 'var(--color-success-bg, #eef9f2)') + '; color: ' + (isKycHigh ? 'var(--color-danger, #be123c)' : 'var(--color-success-text, #1d6b3a)'),
       overlayOpen: s.kycOverlayOpen,
       overlayPressed: s.kycOverlayOpen ? 'true' : 'false',
-      overlayToggleStyle: 'height: 36px; padding: 0 12px; border-radius: 18px; font-size: var(--text-xs, 12px); font-weight: var(--weight-medium, 500); cursor: pointer; border: 1px dashed var(--color-brand-strong, #00728A); background: ' + (s.kycOverlayOpen ? 'var(--color-brand-subtle, #E5F7FA)' : 'var(--color-surface, #fff)') + '; color: ' + (isKycHigh ? 'var(--color-brand-strong, #00728A)' : 'var(--color-brand-strong, #00728A)'),
+      overlayToggleStyle: 'height: 36px; padding: 0 12px; border-radius: 18px; font-size: var(--text-xs, 12px); font-weight: var(--weight-medium, 500); cursor: pointer; border: 1px dashed var(--color-brand-strong, #00AFCD); background: ' + (s.kycOverlayOpen ? 'var(--color-brand-subtle, #E5F7FA)' : 'var(--color-surface, #fff)') + '; color: ' + (isKycHigh ? 'var(--color-brand-strong, #00AFCD)' : 'var(--color-brand-strong, #00AFCD)'),
       openOverlay: function(){ self.setState({ kycOverlayOpen: true, overlayOpen: false }); },
       closeOverlay: function(){ self.setState({ kycOverlayOpen: false }); },
       summaryCardStyle: 'padding: 14px; border-radius: 6px; display: flex; flex-direction: column; gap: 8px; border: 1px solid ' + (isKycHigh ? 'var(--color-danger-border, #fb7185)' : 'var(--color-success-border, #cfe6d6)') + '; background: ' + (isKycHigh ? 'var(--color-danger-bg, #fff1f2)' : 'var(--color-success-bg, #eef9f2)'),
@@ -1884,7 +1884,7 @@ class Component extends DCLogic {
       overlayOpen: s.overlayOpen,
       overlayPressed: s.overlayOpen ? 'true' : 'false',
       overlayToggleLabel: s.overlayOpen ? 'Close 460px overlay' : 'Alerts & issues overlay',
-      overlayToggleStyle: 'height: 36px; padding: 0 12px; border-radius: 18px; font-size: var(--text-xs, 12px); font-weight: var(--weight-medium, 500); cursor: pointer; border: 1px dashed var(--color-brand-strong, #00728A); background: ' + (s.overlayOpen ? 'var(--color-brand-subtle, #E5F7FA)' : 'var(--color-surface, #fff)') + '; color: var(--color-brand-strong, #00728A)',
+      overlayToggleStyle: 'height: 36px; padding: 0 12px; border-radius: 18px; font-size: var(--text-xs, 12px); font-weight: var(--weight-medium, 500); cursor: pointer; border: 1px dashed var(--color-brand-strong, #00AFCD); background: ' + (s.overlayOpen ? 'var(--color-brand-subtle, #E5F7FA)' : 'var(--color-surface, #fff)') + '; color: var(--color-brand-strong, #00AFCD)',
       toggleOverlay: function(){ self.setState({ overlayOpen: !s.overlayOpen, kycOverlayOpen: false }); },
       closeOverlay: function(){ self.setState({ overlayOpen: false }); },
       overlayTabs: [
@@ -1894,7 +1894,7 @@ class Component extends DCLogic {
         var on = s.overlayTab === ot[0];
         return {
           label: ot[1],
-          style: 'height: 36px; border: none; background: none; font-size: var(--text-sm, 14px); line-height: var(--text-sm-lh, 22px); padding: 0 4px; cursor: pointer; color: ' + (on ? 'var(--color-brand-strong, #00728A)' : 'var(--color-text-tertiary, #64748b)') + '; font-weight: ' + (on ? 500 : 400) + '; border-bottom: 3px solid ' + (on ? 'var(--color-brand, #00AFCD)' : 'transparent'),
+          style: 'height: 36px; border: none; background: none; font-size: var(--text-sm, 14px); line-height: var(--text-sm-lh, 22px); padding: 0 4px; cursor: pointer; color: ' + (on ? 'var(--color-brand-strong, #00AFCD)' : 'var(--color-text-tertiary, #64748b)') + '; font-weight: ' + (on ? 500 : 400) + '; border-bottom: 3px solid ' + (on ? 'var(--color-brand, #00AFCD)' : 'transparent'),
           pick: function(){ self.setState({ overlayTab: ot[0], overlayFilter: 'all' }); }
         };
       }),
@@ -1913,7 +1913,7 @@ class Component extends DCLogic {
         return {
           label: fl[1],
           pressed: on ? 'true' : 'false',
-          style: 'height: 36px; padding: 0 12px; border-radius: 18px; font-size: var(--text-xs, 12px); line-height: var(--text-xs-lh, 18px); font-weight: var(--weight-medium, 500); cursor: pointer; border: 1px solid ' + (on ? 'var(--color-brand-strong, #00728A)' : 'var(--color-border-strong, #cbd5e1)') + '; background: ' + (on ? 'var(--color-brand-subtle, #E5F7FA)' : 'var(--color-surface, #fff)') + '; color: ' + (on ? 'var(--color-brand-strong, #00728A)' : 'var(--color-text-secondary, #334155)'),
+          style: 'height: 36px; padding: 0 12px; border-radius: 18px; font-size: var(--text-xs, 12px); line-height: var(--text-xs-lh, 18px); font-weight: var(--weight-medium, 500); cursor: pointer; border: 1px solid ' + (on ? 'var(--color-brand-strong, #00AFCD)' : 'var(--color-border-strong, #cbd5e1)') + '; background: ' + (on ? 'var(--color-brand-subtle, #E5F7FA)' : 'var(--color-surface, #fff)') + '; color: ' + (on ? 'var(--color-brand-strong, #00AFCD)' : 'var(--color-text-secondary, #334155)'),
           pick: function(){ self.setState({ overlayFilter: fl[0] }); }
         };
       }),
@@ -2030,7 +2030,7 @@ class Component extends DCLogic {
           label: ro[1],
           selected: on ? 'true' : 'false',
           check: on ? '✓' : '',
-          style: 'height: 36px; padding: 0 10px; border: none; border-radius: 4px; background: ' + (on ? 'var(--color-brand-subtle, #E5F7FA)' : 'transparent') + '; color: ' + (on ? 'var(--color-brand-strong, #00728A)' : 'var(--color-text-primary, #0f172a)') + '; font-size: var(--text-xs, 12px); line-height: var(--text-xs-lh, 18px); font-weight: ' + (on ? 'var(--weight-medium, 500)' : '400') + '; display: flex; align-items: center; justify-content: space-between; gap: 8px; width: 100%; text-align: left; cursor: pointer',
+          style: 'height: 36px; padding: 0 10px; border: none; border-radius: 4px; background: ' + (on ? 'var(--color-brand-subtle, #E5F7FA)' : 'transparent') + '; color: ' + (on ? 'var(--color-brand-strong, #00AFCD)' : 'var(--color-text-primary, #0f172a)') + '; font-size: var(--text-xs, 12px); line-height: var(--text-xs-lh, 18px); font-weight: ' + (on ? 'var(--weight-medium, 500)' : '400') + '; display: flex; align-items: center; justify-content: space-between; gap: 8px; width: 100%; text-align: left; cursor: pointer',
           pick: function(){
             var nextState = { rangeDays: ro[0], rangeMenuOpen: false };
             if (ro[0] !== rangeDays) {
@@ -2049,7 +2049,7 @@ class Component extends DCLogic {
         return {
           label: vo[1],
           pressed: on ? 'true' : 'false',
-          style: 'height: 36px; padding: 0 14px; border-radius: 4px; border: none; font-size: var(--text-xs, 12px); line-height: var(--text-xs-lh, 18px); font-weight: var(--weight-medium, 500); cursor: pointer; background: ' + (on ? 'var(--color-surface, #fff)' : 'transparent') + '; color: ' + (on ? 'var(--color-brand-strong, #00728A)' : 'var(--color-text-secondary, #334155)') + (on ? '; box-shadow: 0 1px 2px rgba(15, 23, 42, 0.08)' : ''),
+          style: 'height: 36px; padding: 0 14px; border-radius: 4px; border: none; font-size: var(--text-xs, 12px); line-height: var(--text-xs-lh, 18px); font-weight: var(--weight-medium, 500); cursor: pointer; background: ' + (on ? 'var(--color-surface, #fff)' : 'transparent') + '; color: ' + (on ? 'var(--color-brand-strong, #00AFCD)' : 'var(--color-text-secondary, #334155)') + (on ? '; box-shadow: 0 1px 2px rgba(15, 23, 42, 0.08)' : ''),
           pick: function(){ self.setState({ miView: vo[0], rangeMenuOpen: false }); }
         };
       }),
@@ -2057,7 +2057,7 @@ class Component extends DCLogic {
         var on = ti === s.tab;
         return {
           label: t,
-          style: 'height: 36px; border: none; background: none; font-size: var(--text-sm, 14px); line-height: var(--text-sm-lh, 22px); padding: 0 4px; cursor: pointer; color: ' + (on ? 'var(--color-brand-strong, #00728A)' : 'var(--color-text-tertiary, #64748b)') + '; font-weight: ' + (on ? 500 : 400) + '; border-bottom: 3px solid ' + (on ? 'var(--color-brand, #00AFCD)' : 'transparent'),
+          style: 'height: 36px; border: none; background: none; font-size: var(--text-sm, 14px); line-height: var(--text-sm-lh, 22px); padding: 0 4px; cursor: pointer; color: ' + (on ? 'var(--color-brand-strong, #00AFCD)' : 'var(--color-text-tertiary, #64748b)') + '; font-weight: ' + (on ? 500 : 400) + '; border-bottom: 3px solid ' + (on ? 'var(--color-brand, #00AFCD)' : 'transparent'),
           pick: function(){ self.setState({ tab: ti, rangeMenuOpen: false }); }
         };
       }),
@@ -2135,7 +2135,7 @@ class Component extends DCLogic {
         btnClass: 'adm-copy-btn' + (isCopied ? ' adm-copy-copied' : ''),
         copy: function(e){ if (e && e.stopPropagation) e.stopPropagation(); self.handleCopy(v, label, label); },
         value: (warn ? '▲ ' : '') + v + (kind === 'edit' ? '  ✎' : ''),
-        vs: 'font-size: var(--text-sm, 14px); line-height: var(--text-sm-lh, 22px); overflow-wrap: anywhere; font-weight: ' + (warn || kind === 'link' || kind === 'bold' ? 600 : 500) + '; color: ' + (warn ? 'var(--color-danger, #be123c)' : (kind === 'link' || kind === 'edit' ? 'var(--color-brand-strong, #00728A)' : 'var(--color-text-primary, #0f172a)'))
+        vs: 'font-size: var(--text-sm, 14px); line-height: var(--text-sm-lh, 22px); overflow-wrap: anywhere; font-weight: ' + (warn || kind === 'link' || kind === 'bold' ? 600 : 500) + '; color: ' + (warn ? 'var(--color-danger, #be123c)' : (kind === 'link' || kind === 'edit' ? 'var(--color-brand-strong, #00AFCD)' : 'var(--color-text-primary, #0f172a)'))
       };
     };
     var metaKey = [mk('Loan no.', x.loanNo, 'link'), mk('Application', x.app, 'link'), mk('Sanctioned amount', x.sanction, 'bold'), mk('KAM', x.kam, ''), mk('Oxyzo sales agent', x.sales, '')];
@@ -2145,7 +2145,7 @@ class Component extends DCLogic {
 
     var G = (function(){ var first = true, order = [], map = {}; var all = x.actions.map(function(a){ return a.concat([GRP[a[0]]]); }); if (s.fut) { ['Collections','Mandates & KYC','Security & legal'].forEach(function(g){ all.push(['[Future action]',1,'',g]); all.push(['[Future action]',1,'',g]); }); }
           all.forEach(function(a){ if (!map[a[3]]) { map[a[3]] = []; order.push(a[3]); } map[a[3]].push(a); });
-          return order.map(function(g){ return { name: g, rows: map[g].map(function(a){ var on = !!a[1], pri = false; if (on && first) { first = false; pri = true; } return { label: LABEL[a[0]] || a[0], why: on ? '' : a[2], aria: on ? 'false' : 'true', icon: ICON[a[0]] || ICON['[Future action]'], ic: pri ? '#ffffff' : '#00728A', btn: 'display: flex; flex-direction: column; align-items: center; gap: 6px; border: none; background: none; padding: 0; font-family: inherit; cursor: ' + (on ? 'pointer' : 'not-allowed') + '; opacity: ' + (on ? 1 : 0.45), tile: 'width: 52px; height: 52px; border-radius: 8px; display: flex; align-items: center; justify-content: center; background: ' + (pri ? 'var(--color-brand, #00AFCD)' : 'var(--color-surface-muted, #f1f5f9)') }; }) }; }); })();
+          return order.map(function(g){ return { name: g, rows: map[g].map(function(a){ var on = !!a[1], pri = false; if (on && first) { first = false; pri = true; } return { label: LABEL[a[0]] || a[0], why: on ? '' : a[2], aria: on ? 'false' : 'true', icon: ICON[a[0]] || ICON['[Future action]'], ic: pri ? '#ffffff' : '#00AFCD', btn: 'display: flex; flex-direction: column; align-items: center; gap: 6px; border: none; background: none; padding: 0; font-family: inherit; cursor: ' + (on ? 'pointer' : 'not-allowed') + '; opacity: ' + (on ? 1 : 0.45), tile: 'width: 52px; height: 52px; border-radius: 8px; display: flex; align-items: center; justify-content: center; background: ' + (pri ? 'var(--color-brand, #00AFCD)' : 'var(--color-surface-muted, #f1f5f9)') }; }) }; }); })();
     var sx = SECURITY[k], chTot = sx.ch.reduce(function(a, b){ return a + b; }, 0);
     var chipSt = function(kind){ return 'padding: 2px 10px; border-radius: 10px; font-size: var(--text-xs, 12px); line-height: var(--text-xs-lh, 18px); font-weight: var(--weight-medium, 500); ' + (kind === 'expired' || kind === 'short' ? 'background: var(--color-danger-bg, #fff1f2); color: var(--color-danger, #be123c)' : (kind === 'soon' ? 'background: var(--color-warning-bg, #fffbf0); color: var(--color-warning-text, #7a5200)' : 'background: var(--color-surface-muted, #f1f5f9); color: var(--color-success-text, #1d6b3a)')); };
 
@@ -2205,7 +2205,7 @@ class Component extends DCLogic {
         return {
           label: f[1],
           pressed: on ? 'true' : 'false',
-          style: 'height: 36px; border: none; cursor: pointer; font-family: inherit; padding: 0 12px; border-radius: 18px; font-size: var(--text-xs, 12px); line-height: var(--text-xs-lh, 18px); font-weight: var(--weight-medium, 500); background: ' + (on ? 'var(--color-brand-subtle, #E5F7FA)' : 'var(--color-surface-muted, #f1f5f9)') + '; color: ' + (on ? 'var(--color-brand-strong, #00728A)' : 'var(--color-text-secondary, #334155)'),
+          style: 'height: 36px; border: none; cursor: pointer; font-family: inherit; padding: 0 12px; border-radius: 18px; font-size: var(--text-xs, 12px); line-height: var(--text-xs-lh, 18px); font-weight: var(--weight-medium, 500); background: ' + (on ? 'var(--color-brand-subtle, #E5F7FA)' : 'var(--color-surface-muted, #f1f5f9)') + '; color: ' + (on ? 'var(--color-brand-strong, #00AFCD)' : 'var(--color-text-secondary, #334155)'),
           pick: function(){
             StorageAdapter.set('oxyzo:filter:v1:recent_updates', f[0]);
             self.setState({ act: f[0], uopen: null });
@@ -2272,7 +2272,7 @@ class Component extends DCLogic {
     var ren = {
       on: s.ren, count: chain.length, master: x.master,
       pressed: s.ren ? 'true' : 'false', label: s.ren ? 'Previewing renewal loan' : 'Preview as renewal loan',
-      btn: 'height: 36px; padding: 0 12px; border-radius: 18px; font-size: var(--text-xs, 12px); line-height: var(--text-xs-lh, 18px); font-weight: var(--weight-medium, 500); cursor: pointer; font-family: inherit; border: 1px dashed var(--color-nav-bg, #2e3b4a); background: ' + (s.ren ? 'var(--color-brand-subtle, #E5F7FA)' : 'var(--color-surface, #fff)') + '; color: var(--color-brand-strong, #00728A)',
+      btn: 'height: 36px; padding: 0 12px; border-radius: 18px; font-size: var(--text-xs, 12px); line-height: var(--text-xs-lh, 18px); font-weight: var(--weight-medium, 500); cursor: pointer; font-family: inherit; border: 1px dashed var(--color-nav-bg, #2e3b4a); background: ' + (s.ren ? 'var(--color-brand-subtle, #E5F7FA)' : 'var(--color-surface, #fff)') + '; color: var(--color-brand-strong, #00AFCD)',
       toggle: function(){ self.setState({ ren: !s.ren }); },
       tableWrapStyle: 'min-width: 660px',
       headStyle: 'display: grid; grid-template-columns: ' + renCols + '; gap: ' + renGap + '; align-items: center; padding: 10px 12px; border-bottom: 1px solid var(--color-border, #e2e8f0); font-size: var(--text-xs, 12px); line-height: var(--text-xs-lh, 18px); color: var(--color-text-tertiary, #64748b); font-weight: var(--weight-medium, 500)',
@@ -2288,7 +2288,7 @@ class Component extends DCLogic {
           pos: r.pos, posFull: r.posFull,
           led: r.led, ledFull: r.ledFull,
           statusStyle: 'font-weight: var(--weight-medium, 500); line-height: 20px; color: ' + kindColor[r.kind],
-          idStyle: 'font-weight: var(--weight-medium, 500); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; color: var(--color-brand-strong, #00728A)',
+          idStyle: 'font-weight: var(--weight-medium, 500); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; color: var(--color-brand-strong, #00AFCD)',
           copy: function(e){ if (e && e.stopPropagation) e.stopPropagation(); self.handleCopy(r.id, 'ren_' + r.id, 'Loan ID'); },
           btnClass: 'adm-copy-btn' + (rowIdCopied ? ' adm-copy-copied' : ''),
           copied: rowIdCopied,
@@ -2419,7 +2419,7 @@ class Component extends DCLogic {
           (isOd ? 'background: var(--color-danger-bg, #fff1f2); color: var(--color-danger, #be123c)' :
            isDt ? 'background: var(--color-warning-bg, #fffbf0); color: var(--color-warning-text, #7a5200); border: 1px solid var(--color-warning-border, #f0d58a)' :
            isPaid ? 'background: var(--color-surface-muted, #f1f5f9); color: var(--color-text-disabled, #94a3b8)' :
-           'background: var(--color-brand-subtle, #E5F7FA); color: var(--color-brand-strong, #00728A)');
+           'background: var(--color-brand-subtle, #E5F7FA); color: var(--color-brand-strong, #00AFCD)');
         return {
           no: er.no,
           startDate: er.startDate,
@@ -2520,7 +2520,7 @@ class Component extends DCLogic {
         ltype: x.type2, metaKey: metaKey, metaMore: metaMore, metaOpen: s.meta,
         metaWarn: warnN > 0 && !s.meta, metaNoWarn: !(warnN > 0 && !s.meta), metaWarnText: warnN + ' hidden ' + (warnN === 1 ? 'field needs' : 'fields need') + ' attention', metaHint: s.meta ? 'All 15 loan fields shown' : '6 of 15 fields shown',
         metaLabel: s.meta ? 'View less ▴' : 'View all · ' + metaMore.length + ' more ▾', metaExpanded: s.meta ? 'true' : 'false', toggleMeta: function(){ self.setState({ meta: !s.meta }); },
-        futPressed: s.fut ? 'true' : 'false', futLabel: s.fut ? 'Previewing 14 actions' : 'Preview with 14 actions', futStyle: 'height: 36px; padding: 0 12px; border-radius: 18px; font-size: var(--text-xs, 12px); line-height: var(--text-xs-lh, 18px); font-weight: var(--weight-medium, 500); cursor: pointer; border: 1px dashed var(--color-nav-bg, #2e3b4a); background: ' + (s.fut ? 'var(--color-brand-subtle, #E5F7FA)' : 'var(--color-surface, #fff)') + '; color: var(--color-brand-strong, #00728A)', toggleFut: function(){ self.setState({ fut: !s.fut }); },
+        futPressed: s.fut ? 'true' : 'false', futLabel: s.fut ? 'Previewing 14 actions' : 'Preview with 14 actions', futStyle: 'height: 36px; padding: 0 12px; border-radius: 18px; font-size: var(--text-xs, 12px); line-height: var(--text-xs-lh, 18px); font-weight: var(--weight-medium, 500); cursor: pointer; border: 1px dashed var(--color-nav-bg, #2e3b4a); background: ' + (s.fut ? 'var(--color-brand-subtle, #E5F7FA)' : 'var(--color-surface, #fff)') + '; color: var(--color-brand-strong, #00AFCD)', toggleFut: function(){ self.setState({ fut: !s.fut }); },
         name: x.name, status: x.status, primary: x.primary, loanNo: x.loanNo, sanction: x.sanction, program: x.program, kam: x.kam, branch: x.branch,
         clearLine: x.clear,
         utilised: cmp ? cmp.u : x.utilised, utilOf: x.utilOf,
